@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap: meta tags for proper responsive behavior -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Markdown Previewer by archcharles</title>
+    <!-- Bootstrap for CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Load markup file -->
+    <script src="./js/marked.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.1.1/marked.min.js" integrity="sha512-+mCmSlBpa1bF0npQzdpxFWIyJaFbVdEcuyET6FtmHmlXIacQjN/vQs1paCsMlVHHZ2ltD2VTHy3fLFhXQu0AMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- Preview updater function -->
+    <script>
+      function updatePreview() {
+        let previewComponent = document.getElementById('preview');
+        let editorValue = document.getElementById('editor').value;
+        let markedUpHTML = marked.parse(editorValue);
+        // Render to preview
+        previewComponent.innerHTML = markedUpHTML;
+        // ReactDOM.render(editorValue, previewElement);
+    }
+
+    </script>
+
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <wrapper class="row">
+        <div class="col-sm-5">
+          <div class="card">
+            <div class="card-header" >Editor</div>
+            <!-- <div class="card-body"> -->
+              <textarea class="well" id="editor" onkeyup="updatePreview()" placeholder="Type here..."></textarea>
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <div class="col-sm-7">
+          <div class="card">
+            <div class="card-header" >Preview</div>
+            <!-- <div class="card-body"> -->
+              <div class="#" id="preview"></div>
+            <!-- </div> -->
+          </div>
+        </div>
+      </wrapper>
+    </div>
+
+
+
+    <!-- FCC CDN link to run the tests -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <!-- Bootstrap CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
